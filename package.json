@@ -1,16 +1,29 @@
 {
   "name": "booking",
-  "module": "index.ts",
+  "module": "src/index.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
     "@playwright/test": "^1.52.0",
     "@types/bun": "latest",
+    "@types/express": "^5.0.2",
     "@types/node": "^22.15.29",
     "playwright": "^1.52.0"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
-  "scripts": {}
+  "scripts": {
+    "start": "bun i && bun --env-file=.env.example --env-file=.env --hot src/index.ts",
+    "seed": "bun i && bun --env-file=.env.example --env-file=.env prisma/seed.ts",
+    "test": "bun --env-file=.env.example --env-file=.env run test:playwright",
+    "test:playwright": "bunx playwright test"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.9.0",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "prisma": "^6.9.0",
+    "sqlite3": "^5.1.7"
+  }
 }

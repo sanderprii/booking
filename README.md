@@ -1,21 +1,27 @@
 # booking
+This is a simple booking application built with Bun and TypeScript.
 
-To install dependencies:
+First initialize the database:
 
 ```bash
-bun install
+bun run seed
 ```
 
-To run:
+Then, to run the project, execute:
 
 ```bash
-bun run index.ts
+bun start
 ```
 
 # TODO
-- [ ] I can browse available listings
-- [ ] I can see details of a listing
-- [ ] I can see available dates for a listing
-- [ ] I can book a listing
+1. - [x] I can browse available listings
+      - When I visit the main page I can see at least 3 listings 
+      - Each listing has a title, description, price and image
+  
+2. - [ ] I can see details of a listing
+3. - [ ] I can see available dates for a listing
+4. - [ ] I can book a listing
+5. - [ ] I can add a listing
+
 
 

@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <h1>{{title}}</h1>
+
+    <div class="row">
+        {{#each accommodations}}
+            <div class="col-md-4 mb-4">
+                <div class="card" data-testid="accommodation-listing">
+                    <img src="{{image}}" class="card-img-top" alt="{{title}}" data-testid="listing-image">
+                    <div class="card-body">
+                        <h5 class="card-title" data-testid="listing-title">{{title}}</h5>
+                        <p class="card-text" data-testid="listing-description">{{description}}</p>
+                        <p class="card-text"><strong data-testid="listing-price">${{price}}/night</strong></p>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
