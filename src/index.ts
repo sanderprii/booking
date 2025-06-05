@@ -1,3 +1,4 @@
+// src/index.ts - Updated with listing details route
 import express from 'express';
 import {engine} from 'express-handlebars';
 import path from 'path';
@@ -34,6 +35,42 @@ app.get('/', async (req, res) => {
     } catch (error) {
         console.error('Error fetching accommodations:', error);
 
+        res.status(500).render('error', {
+            title: 'Server Error - Booking Site',
+            error: process.env.NODE_ENV === 'development' ?
+                (error instanceof Error ? error.message : String(error)) :
+                'Something went wrong!'
+        });
+    }
+});
+
+// New route for listing details
+app.get('/listings/:id', async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+
+        if (isNaN(id)) {
+            return res.status(404).render('404', {
+                title: 'Page Not Found - Booking Site'
+            });
+        }
+
+        const accommodation = await prisma.accommodation.findUnique({
+            where: { id }
+        });
+
+        if (!accommodation) {
+            return res.status(404).render('404', {
+                title: 'Page Not Found - Booking Site'
+            });
+        }
+
+        res.render('listing-details', {
+            title: `${accommodation.title} - Booking Site`,
+            accommodation
+        });
+    } catch (error) {
+        console.error('Error fetching accommodation details:', error);
         res.status(500).render('error', {
             title: 'Server Error - Booking Site',
             error: process.env.NODE_ENV === 'development' ?

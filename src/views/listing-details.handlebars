@@ -1,0 +1,33 @@
+<!-- src/views/listing-details.handlebars -->
+<div class="container mt-4" data-testid="listing-details">
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{{accommodation.image}}"
+                 class="img-fluid rounded mb-4"
+                 alt="{{accommodation.title}}"
+                 data-testid="listing-detail-image">
+        </div>
+        <div class="col-md-4">
+            <h1 data-testid="listing-detail-title">{{accommodation.title}}</h1>
+            <p class="lead text-muted mb-3" data-testid="listing-detail-description">
+                {{accommodation.description}}
+            </p>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title" data-testid="listing-detail-price">
+                        ${{accommodation.price}}/night
+                    </h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <a href="/" class="btn btn-secondary">
+                ← Back to Listings
+            </a>
+        </div>
+    </div>
+</div>

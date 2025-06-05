@@ -18,7 +18,10 @@ bun start
       - When I visit the main page I can see at least 3 listings 
       - Each listing has a title, description, price and image
   
-2. - [ ] I can see details of a listing
+2. - [x] I can see details of a listing
+      - When I click on a listing, I am redirected to a page with more details
+      - when I visit /listings/:id, I can see the listing details
+      - The listing details page includes the title, description, price, image.
 3. - [ ] I can see available dates for a listing
 4. - [ ] I can book a listing
 5. - [ ] I can add a listing
