@@ -1,0 +1,16 @@
+{
+  "name": "booking",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/bun": "latest",
+    "@types/node": "^22.15.29",
+    "playwright": "^1.52.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {}
+}
